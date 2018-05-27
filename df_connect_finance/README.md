@@ -6,10 +6,16 @@ SourceRecords.
 - [x] Support fetch API call from other API endpoint
 
 ### Config Values ###
-* __topic__ - The topic to publish data to
-* __symbols__ - How often to check for new file(s) to be processed
-* __interval__ - If a file is modified should it be republished to kafka __(default : 10 seconds)__
-* __spoof__ - [PAST|NONE|OTHER] **true**, all below schema information is ignored.
-The schema registry will create a subject called topic_value with Schema.STRING. __(default : false)__ 
-* __schema.registry.uri__ - The URI to the Schema Registry  
-* __schema.subject__ - The subject used to validate avro schema __(default : topic)__
+| property       | example      | comments                                            |
+|----------------|--------------|-----------------------------------------------------|
+| __topic__      |source_stock  |The topic to publish data to                         |
+| __symbols__    |FB,TSLA       |List of stock symbols to process, seprated by commar.|
+| __interval__   |20            |How often to check for new data, default 10 seconds. |
+| __spoof__      |PAST          |If data comes from fake past data (PAST) or random (RAND) or NONE"|
+| __portfolio__  |Top 10 IT Service|list of predefined symbols, such as Top 10 Technology/US Banks/US Telecom/Life Insurance|
+| __chema.registry.uri__   |http://localhost:8081            |The URI to the Schema Registry. |
+| __schema.subject__   |topic_stock            |The subject used to validate avro schema, default topic_stock |
+| __name__   |yahoo-stock-source            |The name of the connect. |
+| __cuid__   |yahoo-stock-source            |The id of the connect. |
+
+### Rest API Reference
