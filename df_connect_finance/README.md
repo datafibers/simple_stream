@@ -19,8 +19,8 @@ SourceRecords.
 | __schema.registry.uri__   |http://localhost:8081            |The URI to the Schema Registry. Create a new schema or use exist schema with same name to __topic__ for data validation.|
 
 
-### Rest API Reference
-* Add the connector
+### Command Reference
+* Add the connector through Kafka connect REST API.
 ```
 curl -X POST \
   http://localhost:8083/connectors/ \
@@ -33,11 +33,15 @@ curl -X POST \
     	"cuid": "finace_source_connector_01",
         "connector.class": "com.datafibers.kafka.connect.FinanceSourceConnector",
         "tasks.max": "1",
-        "topics": "stock_source",
+        "topic": "stock_source",
         "portfolio": "Top 10 IT Service",
         "interval": "10",
         "spoof": "RAND",
         "schema.registry.uri": "http://localhost:8081"
     }
 }'
+```
+* Consume the stock message.
+```
+kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_source
 ```
