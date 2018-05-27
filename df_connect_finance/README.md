@@ -16,7 +16,7 @@ SourceRecords.
 | __interval__   |20            |How often to check for new data, default 10 seconds. |
 | __spoof__      |PAST          |If data comes from fake past data (PAST) or random (RAND) or NONE"|
 | __chema.registry.uri__   |http://localhost:8081            |The URI to the Schema Registry. |
-| __schema.subject__   |topic_stock            |The subject used to validate avro schema, default topic_stock |
+| __schema.subject__   |topic_stock            |The subject used to validate avro schema. When it is not specified or "n/a", create a new schema with same name to __topic__|
 
 
 ### Rest API Reference
