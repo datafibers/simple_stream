@@ -105,8 +105,8 @@ public class YahooFinanceStockHelper {
     public static void main(String [] args) {
         String[] symbols = YahooFinanceStockHelper.portfolio.get("Top 10 Life Insurance").split(",");
         for (String symbol : symbols) {
-            //System.out.println(YahooFinanceStockHelper.getStockJson(symbol, true));
-            System.out.println(YahooFinanceStockHelper.getFakedStockJson(symbol, "PAST"));
+            System.out.println(YahooFinanceStockHelper.getStockJson(symbol, true));
+            //System.out.println(YahooFinanceStockHelper.getFakedStockJson(symbol, "PAST"));
         }
     }
 }

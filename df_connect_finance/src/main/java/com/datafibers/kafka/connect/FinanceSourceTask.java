@@ -111,7 +111,7 @@ public class FinanceSourceTask extends SourceTask {
     }
 
     private SchemaBuilder getInnerBuilder(Field field, Type type) {
-        boolean hasDefault = field.defaultValue() != null;
+        boolean hasDefault = field.defaultVal() != null;
         SchemaBuilder innerBuilder = null;
         switch (type) {
             case STRING: {
