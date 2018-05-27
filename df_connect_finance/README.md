@@ -10,6 +10,7 @@ SourceRecords.
 |----------------|--------------|-----------------------------------------------------|
 | __name__   |yahoo-stock-source            |The name of the connect. |
 | __cuid__   |yahoo-stock-source            |The id of the connect. |
+| __tasks.max__|1|Number of tasks running in paralle|
 | __topic__      |source_stock  |The topic where the connect publishes the data.                         |
 | __symbols__    |FB,TSLA       |List of stock symbols to process, seprated by commar.|
 | __portfolio__  |Top 10 IT Service|list of predefined symbols, such as Top 10 Technology/US Banks/US Telecom/Life Insurance. This will overwrite __symbols__ setting.|
@@ -19,3 +20,24 @@ SourceRecords.
 
 
 ### Rest API Reference
+* Add the connector
+```
+curl -X POST \
+  http://localhost:8083/connectors/ \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 682f7c97-bf2f-4a4c-893a-509655a43c6c' \
+  -d '{
+    "name": "finace_source_connector_01",
+    "config": {
+    	"cuid": "finace_source_connector_01",
+        "connector.class": "com.datafibers.kafka.connect.FinanceSourceConnector",
+        "tasks.max": "1",
+        "topics": "stock_source",
+        "portfolio": "Top 10 IT Service",
+        "interval": "10",
+        "spoof": "RAND",
+        "schema.registry.uri": "http://localhost:8081"
+    }
+}'
+```
