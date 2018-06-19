@@ -10,21 +10,59 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: io.confluent:kafka-streams-avro-serde:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.confluent:common-utils:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.confluent:kafka-avro-serializer:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.confluent:common-config:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.confluent:kafka-schema-registry-client:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.5" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-clients:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.lz4:lz4-java:1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.1.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-streams:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:connect-json:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.rocksdb:rocksdbjni:5.7.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.tukaani:xz:1.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro-maven-plugin:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-project:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-settings:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-profile:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-artifact-manager:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.wagon:wagon-provider-api:1.0-beta-2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-registry:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-interpolation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:1.5.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-artifact:2.0.10" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-9-stable-1" level="project" />
+    <orderEntry type="library" name="Maven: classworlds:classworlds:1.1-alpha-2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:file-management:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.shared:maven-shared-io:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro-compiler:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.7" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:bson:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.2.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.kafka:connect-api:0.11.0.0-cp1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.kafka:kafka-clients:0.11.0.0-cp1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: net.jpountz.lz4:lz4:1.3.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.xerial.snappy:snappy-java:1.1.2.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.kafka:connect-api:1.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.7.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.powermock:powermock-api-easymock:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: cglib:cglib-nodep:2.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.powermock:powermock-api-support:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.powermock:powermock-core:1.6.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.powermock:powermock-reflect:1.6.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.50.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: de.flapdoodle.embed:de.flapdoodle.embed.process:1.50.1" level="project" />
@@ -32,8 +70,72 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.jna:jna:4.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.jna:jna-platform:4.0.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-compress:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.easymock:easymock:3.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:2.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.objenesis:objenesis:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-streams-test-utils:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mockito:mockito-core:2.7.14" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.bytebuddy:byte-buddy:1.6.9" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.bytebuddy:byte-buddy-agent:1.6.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.kafka:kafka-clients:test:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.curator:curator-test:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
+    <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.javassist:javassist:3.18.1-GA" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-math:2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.google.guava:guava:16.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.confluent:kafka-schema-registry:4.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.ext:jersey-bean-validation:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2.external:javax.inject:2.5.0-b30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.core:jersey-common:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.annotation:javax.annotation-api:1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2:hk2-api:2.5.0-b30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2:hk2-utils:2.5.0-b30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2:hk2-locator:2.5.0-b30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.core:jersey-server:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.core:jersey-client:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.media:jersey-media-jaxb:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hibernate:hibernate-validator:5.1.3.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.logging:jboss-logging:3.1.3.GA" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml:classmate:1.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.el:javax.el-api:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.web:javax.el:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.confluent:rest-utils:4.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.confluent:common-metrics:4.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.xml.bind:jaxb-api:2.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.activation:activation:1.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-jmx:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-util:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-server:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-http:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-io:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-servlet:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-security:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-servlets:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-continuation:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-jaas:9.2.24.v20180105" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.5" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.confluent:kafka-schema-registry:tests:4.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.kafka:kafka_2.11:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-library:2.11.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-reflect:2.11.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.scala-logging:scala-logging_2.11:3.7.2" level="project" />
+    <orderEntry type="library" name="Maven: com.101tec:zkclient:0.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.kafka:kafka_2.11:test:1.1.0" level="project" />
   </component>
 </module>
