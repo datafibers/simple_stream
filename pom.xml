@@ -16,7 +16,7 @@
     <properties>
         <df.version>0.1-SNAPSHOT</df.version>
         <confluent.version>4.1.1</confluent.version>
-        <kafka.version>1.1.0</kafka.version>
+        <kafka.version>1.1.0-cp1</kafka.version>
         <jackson.version>2.7.0</jackson.version>
         <junit.version>4.12</junit.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
