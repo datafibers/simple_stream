@@ -1,0 +1,16 @@
+{"namespace": "com.datafibers.kafka.streams.avro",
+ "type": "record",
+ "name": "Stock",
+ "fields": [
+     {"name": "refresh_time",   "type": "string"},
+     {"name": "symbol",         "type": "string"},
+     {"name": "company_name",   "type": "string"},
+     {"name": "exchange",       "type": "string"},
+     {"name": "open_price",     "type": "double"},
+     {"name": "ask_price",      "type": "double"},
+     {"name": "ask_size",       "type": "int"},
+     {"name": "bid_price",      "type": "double"},
+     {"name": "bid_size",       "type": "int"},
+     {"name": "price",          "type": "double"}
+ ]
+}

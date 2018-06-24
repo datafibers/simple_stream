@@ -48,8 +48,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * See {@link WordCountLambdaExample} for further documentation.
  *
- * See {@link WordCountScalaIntegrationTest} for the equivalent Scala example.
- *
  * Note: This example uses lambda expressions and thus works with Java 8+ only.
  */
 public class WordCountLambdaIntegrationTest {
@@ -149,6 +147,8 @@ public class WordCountLambdaIntegrationTest {
         outputTopic, expectedWordCounts.size());
     streams.close();
     assertThat(actualWordCounts).containsExactlyElementsOf(expectedWordCounts);
+    System.out.println("RESULT IS AS FOLLOWS ...");
+    actualWordCounts.forEach(System.out::println);
   }
 
 }

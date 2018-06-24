@@ -14,7 +14,7 @@
     </modules>
 
     <properties>
-        <df.version>0.1-SNAPSHOT</df.version>
+        <df.version>0.1</df.version>
         <confluent.version>4.1.1</confluent.version>
         <kafka.version>1.1.0-cp1</kafka.version>
         <jackson.version>2.7.0</jackson.version>
