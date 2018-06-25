@@ -34,16 +34,20 @@ import java.util.Properties;
 /**
  * Computes word count for each stock
  *
- * Schema with namespace
- *
+ * Create Schema with namespace so that finance connect can write data into it *
  * curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
  *     --data '{"schema": "{ \"type\": \"record\",\"namespace\":\"com.datafibers.kafka.streams.avro\",\"name\": \"Stock\",\"fields\":[{\"name\":\"refresh_time\",\"type\":\"string\"},{\"name\":\"symbol\",\"type\":\"string\"},{\"name\":\"company_name\",\"type\":\"string\"},{\"name\":\"exchange\",\"type\":\"string\"},{\"name\":\"open_price\",\"type\":\"double\"},{\"name\":\"ask_price\",\"type\":\"double\"},{\"name\":\"ask_size\",\"type\":\"int\"},{\"name\":\"bid_price\",\"type\":\"double\"},{\"name\":\"bid_size\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"}]}"}' \
  * http://localhost:8081/subjects/stock_tt/versions
  *
- * Create topic ahead
+ * Create topic ahead to keep data stream
  * $ bin/kafka-topics --create --topic stock_out \
  *                    --zookeeper localhost:2181 --partitions 1 --replication-factor 1
  *
+ * Create consumer to verify
+ * $ bin/kafka-console-consumer --topic stock_out --from-beginning \
+ *                              --zookeeper localhost:2181 \
+ *                              --property print.key=true
+ *                              --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
  * </pre>
  */
 public class StockAvroExample {
