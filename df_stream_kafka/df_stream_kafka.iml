@@ -206,5 +206,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.slf4j:slf4j-log4j12:1.7.25" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.confluent:kafka-schema-registry:tests:4.1.1" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.11.7" level="application" />
   </component>
 </module>
