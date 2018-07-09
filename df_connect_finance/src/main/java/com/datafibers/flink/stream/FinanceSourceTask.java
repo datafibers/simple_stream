@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.spark.stream;
+package com.datafibers.flink.stream;
 
 import static org.apache.avro.Schema.Type.NULL;
 import static org.apache.avro.Schema.Type.RECORD;

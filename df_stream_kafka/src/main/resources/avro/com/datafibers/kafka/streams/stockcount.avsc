@@ -1,0 +1,8 @@
+{"namespace": "com.datafibers.kafka.streams.avro",
+ "type": "record",
+ "name": "Stockcount",
+ "fields": [
+     {"name": "key", "type": "string"},
+     {"name": "count", "type": "long"}
+ ]
+}

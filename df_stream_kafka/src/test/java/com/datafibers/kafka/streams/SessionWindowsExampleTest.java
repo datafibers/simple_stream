@@ -15,8 +15,8 @@
  */
 package com.datafibers.kafka.streams;
 
-import com.datafibers.kafka.streams.avro.PlayEvent;
 import com.datafibers.kafka.streams.kafka.EmbeddedSingleNodeKafkaCluster;
+import com.datafibers.kafka.streams.avro.PlayEvent;
 import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

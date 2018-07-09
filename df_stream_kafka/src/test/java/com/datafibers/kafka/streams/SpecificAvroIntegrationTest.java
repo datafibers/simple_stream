@@ -15,8 +15,8 @@
  */
 package com.datafibers.kafka.streams;
 
-import com.datafibers.kafka.streams.avro.WikiFeed;
 import com.datafibers.kafka.streams.kafka.EmbeddedSingleNodeKafkaCluster;
+import com.datafibers.kafka.streams.avro.WikiFeed;
 import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;

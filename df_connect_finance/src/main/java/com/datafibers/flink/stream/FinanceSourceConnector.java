@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.spark.stream;
+package com.datafibers.flink.stream;
 
 import java.util.Arrays;
 import java.util.HashMap;

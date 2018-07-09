@@ -47,7 +47,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
-import static com.datafibers.kafka.streams.TopArticlesExampleDriver.loadSchema;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -90,7 +89,7 @@ public class TopArticlesLambdaExampleTest {
     final KafkaProducer<String, GenericRecord> producer = new KafkaProducer<>(props);
 
     final GenericRecordBuilder pageViewBuilder =
-        new GenericRecordBuilder(loadSchema("pageview.avsc"));
+        new GenericRecordBuilder(TopArticlesExampleDriver.loadSchema("pageview.avsc"));
 
     pageViewBuilder.set("flags", "ARTICLE");
 

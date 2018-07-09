@@ -1,4 +1,4 @@
-package com.datafibers.spark.stream;
+package com.datafibers.flink.stream;
 
 import org.json.JSONObject;
 import yahoofinance.Stock;

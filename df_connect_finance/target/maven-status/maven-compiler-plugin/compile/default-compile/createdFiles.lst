@@ -1,4 +1,4 @@
-com/datafibers/kafka/connect/YahooFinanceStockHelper.class
-com/datafibers/kafka/connect/FinanceSourceTask.class
-com/datafibers/kafka/connect/FinanceSourceTask$1.class
-com/datafibers/kafka/connect/FinanceSourceConnector.class
+com\datafibers\flink\stream\YahooFinanceStockHelper.class
+com\datafibers\flink\stream\FinanceSourceTask.class
+com\datafibers\flink\stream\FinanceSourceConnector.class
+com\datafibers\flink\stream\FinanceSourceTask$1.class
