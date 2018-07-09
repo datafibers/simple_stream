@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;

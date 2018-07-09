@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import static org.apache.avro.Schema.Type.NULL;
 import static org.apache.avro.Schema.Type.RECORD;

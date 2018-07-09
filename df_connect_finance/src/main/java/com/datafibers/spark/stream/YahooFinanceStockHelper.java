@@ -1,4 +1,4 @@
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import org.json.JSONObject;
 import yahoofinance.Stock;

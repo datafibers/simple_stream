@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import java.util.Collections;
 import java.util.List;

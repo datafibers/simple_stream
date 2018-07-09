@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import org.junit.Test;
 
-public class SchemaedFileSinkConnectorConfigTest {
+public class SchemaedFileSourceTaskTest {
   @Test
-  public void doc() {
-    System.out.println(SchemaedFileSinkConnectorConfig.conf().toRst());
+  public void test() {
+    // Congrats on a passing test!
   }
 }

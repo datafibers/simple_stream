@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import java.util.Arrays;
 import java.util.HashMap;

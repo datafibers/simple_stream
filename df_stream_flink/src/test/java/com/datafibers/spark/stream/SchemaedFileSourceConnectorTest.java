@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
 import org.junit.Test;
 
-public class SchemaedFileSourceTaskTest {
+public class SchemaedFileSourceConnectorTest {
   @Test
   public void test() {
     // Congrats on a passing test!

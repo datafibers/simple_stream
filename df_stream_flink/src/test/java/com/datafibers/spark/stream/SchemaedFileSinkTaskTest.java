@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.datafibers.kafka.connect;
+package com.datafibers.spark.stream;
 
-class VersionUtil {
-  public static String getVersion() {
-    try {
-      return VersionUtil.class.getPackage().getImplementationVersion();
-    } catch(Exception ex){
-      return "0.0.1";
-    }
+import org.junit.Test;
+
+public class SchemaedFileSinkTaskTest {
+  @Test
+  public void test() {
+    // Congrats on a passing test!
   }
 }
