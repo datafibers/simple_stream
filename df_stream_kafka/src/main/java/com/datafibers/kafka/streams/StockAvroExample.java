@@ -37,7 +37,9 @@ import java.util.Properties;
  * Create Schema with namespace so that finance connect can write data into it *
  * curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
  *     --data '{"schema": "{ \"type\": \"record\",\"namespace\":\"com.datafibers.kafka.streams.avro\",\"name\": \"Stock\",\"fields\":[{\"name\":\"refresh_time\",\"type\":\"string\"},{\"name\":\"symbol\",\"type\":\"string\"},{\"name\":\"company_name\",\"type\":\"string\"},{\"name\":\"exchange\",\"type\":\"string\"},{\"name\":\"open_price\",\"type\":\"double\"},{\"name\":\"ask_price\",\"type\":\"double\"},{\"name\":\"ask_size\",\"type\":\"int\"},{\"name\":\"bid_price\",\"type\":\"double\"},{\"name\":\"bid_size\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"}]}"}' \
- * http://localhost:8081/subjects/stock_tt/versions
+ * http://localhost:8081/subjects/stock_test/versions
+ *
+ * Create Finance connector to send data to stock_test from rest api
  *
  * Create topic ahead to keep data stream
  * $ bin/kafka-topics --create --topic stock_out \
@@ -54,8 +56,8 @@ public class StockAvroExample {
 
   public static void main(final String[] args) throws Exception {
     final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
-    final String schemaRegistryUrl = args.length > 1 ? args[1] : "http://localhost:8081";
-    final String STOCK_INPUT_TOPIC = "stock_tt";
+    final String schemaRegistryUrl = args.length > 1 ? args[1] : "http://localhost:8002"; // here we use 8002 rather than 8081 since we have port forwarding
+    final String STOCK_INPUT_TOPIC = "stock_test";
     final String STOCK_OUTPUT_TOPIC = "stock_out";
 
     final KafkaStreams streams = buildAvroFeed(bootstrapServers, schemaRegistryUrl,

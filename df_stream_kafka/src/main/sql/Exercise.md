@@ -18,6 +18,15 @@ Create the trip-details and station-details topics in Kafka using the below comm
 ./bin/kafka-topics --create --zookeeper localhost:2181 --topic station-details --replication-factor 1 --partitions 1
 ./bin/kafka-topics --create --zookeeper localhost:2181 --topic trip-details --replication-factor 1 --partitions 1
 ```
+To run the producer, make sure proper version of scala is configured.
+* Go to "File | Other Settings | Default Project Structure | Global Libraries"
+* Click the + button at the top left hand side of the Window
+* Select Scala SDK 2.11.8
+
+
+
+Choose the version you want to install.
+
 Join stream data and table data.
 Group data.
 Produce trip details.

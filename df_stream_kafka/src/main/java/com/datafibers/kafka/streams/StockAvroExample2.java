@@ -51,17 +51,16 @@ import java.util.Properties;
  *                    --zookeeper localhost:2181 --partitions 1 --replication-factor 1
  *
  * Create consumer to verify
- * $ bin/kafka-console-avro-consumer --topic stock_out --from-beginning \
- *                              --zookeeper localhost:2181 \
+ * $ bin/kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_out2 --from-beginning
  * </pre>
  */
 public class StockAvroExample2 {
 
   public static void main(final String[] args) throws Exception {
     final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
-    final String schemaRegistryUrl = args.length > 1 ? args[1] : "http://localhost:8081";
-    final String STOCK_INPUT_TOPIC = "stock_tt";
-    final String STOCK_OUTPUT_TOPIC = "stock_out";
+    final String schemaRegistryUrl = args.length > 1 ? args[1] : "http://localhost:8002";
+    final String STOCK_INPUT_TOPIC = "stock_test";
+    final String STOCK_OUTPUT_TOPIC = "stock_out2";
 
     final KafkaStreams streams = buildAvroFeed(bootstrapServers, schemaRegistryUrl,
             "/tmp/kafka-streams", STOCK_INPUT_TOPIC, STOCK_OUTPUT_TOPIC);

@@ -16,15 +16,17 @@ object Producer {
 
   def main(args: Array[String]) {
 
-    val TOPIC = args(0)
-    val broker = args(1)
-    val produceType = args(2)
-    var producer: KafkaProducer[String, String] = null
+    val topic_trip = "trip-details"
+    val topic_station = "station-details"
+    val broker = "localhost:9092"
+    var producer_trip: KafkaProducer[String, String] = null
+    var producer_station: KafkaProducer[String, String] = null
     val startTime = System.currentTimeMillis()
+    val csvPath = "/Users/will/Documents/Coding/GitHub/simple_stream/df_stream_kafka/src/main/resources/201703-citibike-tripdata.csv";
 
     println("Kafka producer initiated ...... ")
     println("Kafka producer started ...... ")
-    println("Producing with broker list " + broker + "in topic " + TOPIC)
+    println("Producing with broker list " + broker)
 
     val props = new Properties()
     props.put("bootstrap.servers", broker)
@@ -43,26 +45,27 @@ object Producer {
     props.put("buffer.memory", "33554432");
     props.put("request.timeout.ms", "250000");
 
-    producer = new KafkaProducer[String, String](props)
+    producer_trip = new KafkaProducer[String, String](props)
+    producer_station = new KafkaProducer[String, String](props)
 
-    if ("trip_data".equals(produceType)) {
-      println("started trip_data producer ...... ")
-      produceTripData(producer, TOPIC)
-    } else {
-      println("started station_data producer ...... ")
-      producerStationData(producer, TOPIC);
-    }
+    println("started trip_data producer " + "in topic " + topic_trip)
+    produceTripData(producer_trip, topic_trip, csvPath);
+    producer_trip.close;
+    producer_trip.flush;
 
-    producer.close
-    producer.flush
+    println("started station_data producer " + "in topic " + topic_station)
+    producerStationData(producer_station, topic_station);
+
+    producer_station.close
+    producer_station.flush
   }
 
   /**
    * Produces trip details to topic by reading data from the file
    */
-  def produceTripData(producer: KafkaProducer[String, String], TOPIC: String) {
+  def produceTripData(producer: KafkaProducer[String, String], TOPIC: String, csvPath: String) {
     //File path to read citibike trip data
-    val records = readFile("/path/to/201703-citibike-tripdata.csv")
+    val records = readFile(csvPath)
     var key: Integer = 0;
     for (recordStr: String <- records) {
       key += 1;
