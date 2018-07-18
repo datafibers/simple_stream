@@ -45,3 +45,9 @@ curl -X POST \
 ```
 kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_source
 ```
+* Use console avro producer to send message. (Note, do not input an _Enter_ which will cause producer exception)
+```
+kafka-avro-console-producer \
+--broker-list localhost:9092 --topic test_source \
+--property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}'
+```
