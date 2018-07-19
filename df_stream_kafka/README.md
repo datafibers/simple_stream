@@ -1,6 +1,7 @@
 # Kafka Stream
 This repository contains example of using KStream to read and write with Kafka data.
-
+# Stream vs. Table
+![](https://www.rittmanmead.com/blog/content/images/2017/09/StreamVSTableAcc.gif)
 # Stream Windows
 All the windowing operations output results at the end of the window. The output of the window will be single event based on the aggregate function used. The output event will have the time stamp of the end of the window and all window functions are defined with a fixed length.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-conceptual.png)
@@ -28,3 +29,4 @@ When a partition key is provided, the events are grouped together by the key and
 1. [KStream SerDe Guide](https://docs.confluent.io/current/streams/developer-guide/datatypes.html#streams-developer-guide-serdes)
 2. [Confluent Wire Format](https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html#wire-format)
 3. [KStream DSL Windows](https://docs.confluent.io/current/streams/developer-guide/dsl-api.html#windowing)
+4. [KSQL Overview](https://www.rittmanmead.com/blog/2017/10/ksql-streaming-sql-for-apache-kafka/)
