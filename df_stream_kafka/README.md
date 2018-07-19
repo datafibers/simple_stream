@@ -27,3 +27,4 @@ When a partition key is provided, the events are grouped together by the key and
 ## Reference
 1. [KStream SerDe Guide](https://docs.confluent.io/current/streams/developer-guide/datatypes.html#streams-developer-guide-serdes)
 2. [Confluent Wire Format](https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html#wire-format)
+3. [KStream DSL Windows](https://docs.confluent.io/current/streams/developer-guide/dsl-api.html#windowing)
