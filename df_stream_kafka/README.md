@@ -4,9 +4,9 @@ This repository contains example of using KStream to read and write with Kafka d
 ![](https://www.rittmanmead.com/blog/content/images/2017/09/StreamVSTableAcc.gif)
 
 The KStream DSL uses three main abstractions. 
-* A KStream is an abstraction of a record stream, where each data record represents a self-contained datum in the unbounded data set. 
-* A KTable is an abstraction of a changelog stream, where each data record represents an update. More precisely, the value in a data record is considered to be an update of the last value for the same record key, if any (if a corresponding key doesn't exist yet, the update will be considered a create).
-* a GlobalKTable is an abstraction of a changelog stream, where each data record represents an update. However, a GlobalKTable is different from a KTable in that it is fully replicated on each KafkaStreams instance. GlobalKTable also provides the ability to look up current values of data records by keys. This table-lookup functionality is available through join operations.
+* A **KStream** is an abstraction of a record stream, where each data record represents a self-contained datum in the unbounded data set. 
+* A **KTable** is an abstraction of a changelog stream, where each data record represents an update. More precisely, the value in a data record is considered to be an update of the last value for the same record key, if any (if a corresponding key doesn't exist yet, the update will be considered a create).
+* a **GlobalKTable** is an abstraction of a changelog stream, where each data record represents an update. However, a GlobalKTable is different from a KTable in that it is fully replicated on each KafkaStreams instance. GlobalKTable also provides the ability to look up current values of data records by keys. This table-lookup functionality is available through join operations.
 
 A KTable shardes the data between all running Kafka Streams instances, while a GlobalKTable has a full copy of all data on each instance. KTables are the way to go when working with state in Kafka Streams. Basically they are a materialized view on a topic where every message is an upsert of the last record with the same key. KTables eventually contains every change published to the underlying topic.
 
