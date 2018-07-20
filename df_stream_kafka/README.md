@@ -1,6 +1,7 @@
 # Kafka Stream
 This repository contains example of using KStream to read and write with Kafka data.
-# Stream vs. Table
+# Concept
+## Stream vs. Table
 ![](https://www.rittmanmead.com/blog/content/images/2017/09/StreamVSTableAcc.gif)
 
 The KStream DSL uses three main abstractions. 
@@ -15,17 +16,17 @@ Normal KTables only contain the data of the partitions consumed by the Kafka Str
 # Stream Windows
 All the windowing operations output results at the end of the window. The output of the window will be single event based on the aggregate function used. The output event will have the time stamp of the end of the window and all window functions are defined with a fixed length.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-conceptual.png)
-## Tumbling window
+### Tumbling window
 Tumbling window functions are used to segment a data stream into distinct time segments and perform a function against them, such as the example below. The key differentiators of a Tumbling window are that they repeat, do not overlap, and an event cannot belong to more than one tumbling window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-tumbling-intro.png)
-## Hopping window
+### Hopping window
 Hopping window functions hop forward in time by a fixed period. It may be easy to think of them as Tumbling windows that can overlap, so events can belong to more than one Hopping window result set. To make a Hopping window the same as a Tumbling window, specify the hop size to be the same as the window size.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
-## Sliding window
+### Sliding window
 Sliding window functions, unlike Tumbling or Hopping windows, produce an output only when an event occurs. Every window will have at least one event and the window continuously moves forward along with data record timestamps. Like hopping windows, events can belong to more than one sliding window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 
-## Session window 
+### Session window 
 Session window functions group events that arrive at similar times, filtering out periods of time where there is no data. It has three main parameters: timeout, maximum duration, and partitioning key (optional).
 
 A session window begins when the first event occurs. If another event occurs within the specified timeout from the last ingested event, then the window extends to include the new event. Otherwise if no events occur within the timeout, then the window is closed at the timeout.
@@ -34,6 +35,50 @@ If events keep occurring within the specified timeout, the session window will k
 
 When a partition key is provided, the events are grouped together by the key and session window is applied to each group independently. This partitioning is useful for cases where you need different session windows for different users or devices.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-session-intro.png)
+## Excercise
+1. Create schema with below command in Linux
+```
+curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+      --data '{"schema": "{ \"type\": \"record\",\"namespace\":\"com.datafibers.kafka.streams.avro\",\"name\": \"Stock\",\"fields\":[{\"name\":\"refresh_time\",\"type\":\"string\"},{\"name\":\"symbol\",\"type\":\"string\"},{\"name\":\"company_name\",\"type\":\"string\"},{\"name\":\"exchange\",\"type\":\"string\"},{\"name\":\"open_price\",\"type\":\"double\"},{\"name\":\"ask_price\",\"type\":\"double\"},{\"name\":\"ask_size\",\"type\":\"int\"},{\"name\":\"bid_price\",\"type\":\"double\"},{\"name\":\"bid_size\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"}]}"}' \
+ http://localhost:8081/subjects/stock_test1/versions
+ ```
+2. Start test environment with ```ops start mask0110000```
+3. Add a finance stock source connect and send data to topic **stock_test1**
+```
+curl -X POST \
+  http://localhost:8083/connectors/ \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: f8700637-6872-409b-9c09-d28c42b162cb' \
+  -d '{
+    "name": "finace_source_connector_01",
+    "config": {
+    	"cuid": "finace_source_connector_01",
+        "connector.class": "com.datafibers.kafka.connect.FinanceSourceConnector",
+        "tasks.max": "1",
+        "topic": "stock_test1",
+        "portfolio": "Top 10 IT Service",
+        "interval": "5",
+        "spoof": "RAND",
+        "schema.registry.uri": "http://localhost:8081"
+    }
+}'
+```
+4. Run the _main()_ in [StockAvroExample.java](https://github.com/datafibers/simple_stream/blob/master/df_stream_kafka/src/main/java/com/datafibers/kafka/streams/StockAvroExample.java) with regular message format.
+
+5. Verify in VM with below command
+```
+kafka-console-consumer --topic stock_out --from-beginning \
+--zookeeper localhost:2181 \
+--property print.key=true \
+--property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
+```
+6. Run the _main()_ in [StockAvroExample2.java](https://github.com/datafibers/simple_stream/blob/master/df_stream_kafka/src/main/java/com/datafibers/kafka/streams/StockAvroExample2.java) with AVRO message format.
+
+7. Verify in VM with below command
+```
+kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_out2 --from-beginning
+```
 
 ## Reference
 1. [KStream SerDe Guide](https://docs.confluent.io/current/streams/developer-guide/datatypes.html#streams-developer-guide-serdes)
