@@ -15,7 +15,6 @@
 .project
 .classpath
 .svn
-.iml
 dependency-reduced-pom.xml
 .DS_Store
 .vertx/

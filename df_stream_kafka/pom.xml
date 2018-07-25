@@ -6,12 +6,11 @@
     <parent>
         <groupId>com.datafibers</groupId>
         <artifactId>df_simple_stream</artifactId>
-        <version>${df.version}</version>
+        <version>0.1</version>
     </parent>
 
     <groupId>com.datafibers</groupId>
     <artifactId>df_stream_kafka</artifactId>
-    <version>${df.version}</version>
     <packaging>jar</packaging>
 
     <repositories>

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.datafibers</groupId>
     <artifactId>df_simple_stream</artifactId>
-    <version>${df.version}</version>
+    <version>0.1</version>
     <packaging>pom</packaging>
     <modules>
         <module>df_stream_spark</module>
@@ -14,7 +14,6 @@
     </modules>
 
     <properties>
-        <df.version>0.1</df.version>
         <confluent.version>4.1.1</confluent.version>
         <kafka.version>1.1.0-cp1</kafka.version>
         <jackson.version>2.7.0</jackson.version>

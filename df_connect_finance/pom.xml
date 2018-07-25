@@ -5,12 +5,11 @@
     <parent>
         <groupId>com.datafibers</groupId>
         <artifactId>df_simple_stream</artifactId>
-        <version>${df.version}</version>
+        <version>0.1</version>
     </parent>
 
     <groupId>com.datafibers</groupId>
     <artifactId>df_connect_finance</artifactId>
-    <version>${df.version}</version>
     <packaging>jar</packaging>
 
     <name>df_connect_finance</name>
