@@ -21,7 +21,7 @@ public class YahooFinanceStockHelper {
         portfolio.put("Top 10 Technology", "GOOGL,MSFT,AMZN,BABA,ORCL,IBM,HPE,SAP,FB,EBAY");
         portfolio.put("Top 10 US Banks", "ASB,BANC,BXS,BAC,BOH,BK,BBT,JPM,COF,C");
         portfolio.put("Top 10 US Telecom", "WIN,FTR,CTL,CNSL,BCE,T,VZ,CHT,SHEN,ALSK");
-        portfolio.put("Top 10 Life Insurance", "AEK,AEG,SLF,MET,MFC,PRU,ANAT,FFG,LNC,PUK");
+        portfolio.put("Top 10 Life Insurance", "KNSL,SLF,MET,MFC,PRU,ANAT,FFG,LNC,PUK");
     }
 
     public static String getStockJson(String symbol, Boolean refresh) {
@@ -102,10 +102,34 @@ public class YahooFinanceStockHelper {
         return stockJson.toString();
     }
 
+    public static List<String> subdomainVisits(String[] cpdomains) {
+        List<String> res = new ArrayList<>();
+        Map<String, Integer> hs = new HashMap<>();
+        for(String cpdomain : cpdomains) {
+            int cnt = Integer.parseInt(cpdomain.split(" ")[0]);
+            String domain = cpdomain.split(" ")[1];
+            hs.put(domain, hs.getOrDefault(domain, 0) + cnt);
+            while (domain.indexOf(".") > 0) {
+                String subDomain = domain.substring(domain.indexOf(".") + 1);
+                domain = subDomain;
+                hs.put(domain, hs.getOrDefault(domain, 0) + cnt);
+            }
+        }
+        // hs to list
+        for(String domain : hs.keySet()) {
+            res.add(domain + " " + hs.getOrDefault(domain, 0));
+        }
+        return res;
+    }
+
     public static void main(String [] args) {
+        String[] str = new String[] {"9001 discuss.leetcode.com", "9000 discuss.google.com"};
+
+        System.out.println(YahooFinanceStockHelper.subdomainVisits(str));
+
         String[] symbols = YahooFinanceStockHelper.portfolio.get("Top 10 Life Insurance").split(",");
         for (String symbol : symbols) {
-            System.out.println(YahooFinanceStockHelper.getStockJson(symbol, true));
+            System.out.println(YahooFinanceStockHelper.getStockJson(symbol, false));
             //System.out.println(YahooFinanceStockHelper.getFakedStockJson(symbol, "PAST"));
         }
     }

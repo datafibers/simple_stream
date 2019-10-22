@@ -1,4 +1,4 @@
-com\datafibers\flink\stream\YahooFinanceStockHelper.class
-com\datafibers\flink\stream\FinanceSourceTask.class
-com\datafibers\flink\stream\FinanceSourceConnector.class
-com\datafibers\flink\stream\FinanceSourceTask$1.class
+com/datafibers/flink/stream/FinanceSourceTask$1.class
+com/datafibers/flink/stream/YahooFinanceStockHelper.class
+com/datafibers/flink/stream/FinanceSourceConnector.class
+com/datafibers/flink/stream/FinanceSourceTask.class
