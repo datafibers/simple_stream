@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.flink.stream;
+package com.datafibers.kafka.connect;
 
 import static org.apache.avro.Schema.Type.NULL;
 import static org.apache.avro.Schema.Type.RECORD;

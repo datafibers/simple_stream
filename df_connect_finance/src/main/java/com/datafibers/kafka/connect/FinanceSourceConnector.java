@@ -13,7 +13,7 @@
  * the License.
  **/
 
-package com.datafibers.flink.stream;
+package com.datafibers.kafka.connect;
 
 import java.util.Arrays;
 import java.util.HashMap;

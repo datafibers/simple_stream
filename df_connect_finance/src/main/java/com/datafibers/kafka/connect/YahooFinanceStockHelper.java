@@ -1,4 +1,4 @@
-package com.datafibers.flink.stream;
+package com.datafibers.kafka.connect;
 
 import org.json.JSONObject;
 import yahoofinance.Stock;
@@ -46,6 +46,31 @@ public class YahooFinanceStockHelper {
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
+        return null;
+    }
+
+    public static String getStockJson2(Stock stock, Boolean refresh) {
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        df.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+
+        try {
+            //Stock stock = YahooFinance.get(symbol);
+            JSONObject stockJson = new JSONObject()
+                    .put("refresh_time", df.format(new Date()))
+                    .put("symbol", stock.getSymbol())
+                    .put("company_name", stock.getName())
+                    .put("exchange", stock.getStockExchange())
+                    .put("ask_size", stock.getQuote(refresh).getAskSize().intValue())
+                    .put("bid_size", stock.getQuote(refresh).getBidSize().intValue())
+                    .put("open_price", Double.valueOf(stock.getQuote(refresh).getOpen().toString()))
+                    .put("ask_price", Double.valueOf(stock.getQuote(refresh).getAsk().toString()))
+                    .put("bid_price", Double.valueOf(stock.getQuote(refresh).getBid().toString()))
+                    .put("price",  Double.valueOf(stock.getQuote(refresh).getPrice().toString()));
+            return stockJson.toString();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
         return null;
     }
 
@@ -123,14 +148,17 @@ public class YahooFinanceStockHelper {
     }
 
     public static void main(String [] args) {
-        String[] str = new String[] {"9001 discuss.leetcode.com", "9000 discuss.google.com"};
+       String[] symbols = YahooFinanceStockHelper.portfolio.get("Top 10 Life Insurance").split(",");
+        try {
+            Map<String, Stock> stocks = YahooFinance.get(symbols);
 
-        System.out.println(YahooFinanceStockHelper.subdomainVisits(str));
-
-        String[] symbols = YahooFinanceStockHelper.portfolio.get("Top 10 Life Insurance").split(",");
-        for (String symbol : symbols) {
-            System.out.println(YahooFinanceStockHelper.getStockJson(symbol, false));
-            //System.out.println(YahooFinanceStockHelper.getFakedStockJson(symbol, "PAST"));
+            for (String symbol : symbols) {
+                System.out.println(
+                        YahooFinanceStockHelper.getStockJson2(stocks.get(symbol), false));
+                //System.out.println(YahooFinanceStockHelper.getFakedStockJson(symbol, "PAST"));
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
     }
 }
