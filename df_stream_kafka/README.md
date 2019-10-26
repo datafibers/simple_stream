@@ -28,7 +28,7 @@ TimeWindows.of(windowSizeMs).advanceBy(windowSizeMs);
 ```
 ### Hopping window
 Hopping window functions hop forward in time by a fixed period. It may be easy to think of them as Tumbling windows that can overlap, so events can belong to more than one Hopping window result set. To make a Hopping window the same as a Tumbling window, specify the hop size to be the same as the window size.
-![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png).
+![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
 In Java
 ```
 TimeWindows.of(windowSizeMs).advanceBy(advanceMs);
