@@ -19,7 +19,7 @@ All the windowing operations output results at the end of the window. The output
 ### Tumbling window
 Tumbling window functions are used to segment a data stream into distinct time segments and perform a function against them, such as the example below. The key differentiators of a Tumbling window are that they repeat, do not overlap, and an event cannot belong to more than one tumbling window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-tumbling-intro.png)
-in Java
+In Java
 ```
 TimeWindows.of(windowSizeMs);
 
