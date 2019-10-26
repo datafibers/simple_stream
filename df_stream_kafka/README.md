@@ -36,7 +36,10 @@ TimeWindows.of(windowSizeMs).advanceBy(advanceMs);
 ### Sliding window
 Sliding window functions, unlike Tumbling or Hopping windows, produce an output only when an event occurs. Every window will have at least one event and the window continuously moves forward along with data record timestamps. Like hopping windows, events can belong to more than one sliding window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
-
+In Java, it is same to hopping window
+```
+TimeWindows.of(windowSizeMs).advanceBy(advanceMs);
+```
 ### Session window 
 Session window functions group events that arrive at similar times, filtering out periods of time where there is no data. It has three main parameters: timeout, maximum duration, and partitioning key (optional).
 
