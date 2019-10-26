@@ -34,7 +34,7 @@ In Java
 TimeWindows.of(windowSizeMs).advanceBy(advanceMs);
 ```
 ### Sliding window
-Sliding window functions, unlike Tumbling or Hopping windows, produce an output only when an event occurs. Every window will have at least one event and the window continuously moves forward along with data record timestamps. Like hopping windows, events can belong to more than one sliding window.
+Sliding window functions, unlike Tumbling or Hopping windows, produce an output only when an event occurs. Every window will have at least one event and the window continuously moves forward along with data record timestamps. Like hopping windows, events can belong to more than one sliding window. In Kafka Streams, sliding windows are used only for join operations, and can be specified through the JoinWindows class.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 In Java, it is same to hopping window
 ```
