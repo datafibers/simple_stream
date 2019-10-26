@@ -19,9 +19,20 @@ All the windowing operations output results at the end of the window. The output
 ### Tumbling window
 Tumbling window functions are used to segment a data stream into distinct time segments and perform a function against them, such as the example below. The key differentiators of a Tumbling window are that they repeat, do not overlap, and an event cannot belong to more than one tumbling window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-tumbling-intro.png)
+in Java
+```
+TimeWindows.of(windowSizeMs);
+
+// The above is equivalent to the following code:
+TimeWindows.of(windowSizeMs).advanceBy(windowSizeMs);
+```
 ### Hopping window
 Hopping window functions hop forward in time by a fixed period. It may be easy to think of them as Tumbling windows that can overlap, so events can belong to more than one Hopping window result set. To make a Hopping window the same as a Tumbling window, specify the hop size to be the same as the window size.
-![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
+![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png).
+In Java
+```
+TimeWindows.of(windowSizeMs).advanceBy(advanceMs);
+```
 ### Sliding window
 Sliding window functions, unlike Tumbling or Hopping windows, produce an output only when an event occurs. Every window will have at least one event and the window continuously moves forward along with data record timestamps. Like hopping windows, events can belong to more than one sliding window.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
@@ -35,6 +46,10 @@ If events keep occurring within the specified timeout, the session window will k
 
 When a partition key is provided, the events are grouped together by the key and session window is applied to each group independently. This partitioning is useful for cases where you need different session windows for different users or devices.
 ![](https://docs.microsoft.com/en-us/azure/stream-analytics/media/stream-analytics-window-functions/stream-analytics-window-functions-session-intro.png)
+In Java
+```
+SessionWindows.with(TimeUnit.MINUTES.toMillis(5));
+```
 ## Excercise
 1. Create schema with below command in Linux
 ```
