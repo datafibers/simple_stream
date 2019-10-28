@@ -44,14 +44,14 @@ import java.util.Properties;
  * Create Schema with namespace so that finance connect can write data into it *
  * curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
  *     --data '{"schema": "{ \"type\": \"record\",\"namespace\":\"com.datafibers.kafka.streams.avro\",\"name\": \"Stock\",\"fields\":[{\"name\":\"refresh_time\",\"type\":\"string\"},{\"name\":\"symbol\",\"type\":\"string\"},{\"name\":\"company_name\",\"type\":\"string\"},{\"name\":\"exchange\",\"type\":\"string\"},{\"name\":\"open_price\",\"type\":\"double\"},{\"name\":\"ask_price\",\"type\":\"double\"},{\"name\":\"ask_size\",\"type\":\"int\"},{\"name\":\"bid_price\",\"type\":\"double\"},{\"name\":\"bid_size\",\"type\":\"int\"},{\"name\":\"price\",\"type\":\"double\"}]}"}' \
- * http://localhost:8081/subjects/stock_tt/versions
+ * http://localhost:8081/subjects/stock_source/versions
  *
  * Create topic ahead to keep data stream
  * $ bin/kafka-topics --create --topic stock_out \
  *                    --zookeeper localhost:2181 --partitions 1 --replication-factor 1
  *
  * Create consumer to verify
- * $ bin/kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_out2 --from-beginning
+ * $ bin/kafka-avro-console-consumer --bootstrap-server localhost:9092 --topic stock_out --from-beginning
  * </pre>
  */
 public class StockAvroExample2 {
@@ -59,8 +59,8 @@ public class StockAvroExample2 {
   public static void main(final String[] args) throws Exception {
     final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
     final String schemaRegistryUrl = args.length > 1 ? args[1] : "http://localhost:8002";
-    final String STOCK_INPUT_TOPIC = "stock_test";
-    final String STOCK_OUTPUT_TOPIC = "stock_out2";
+    final String STOCK_INPUT_TOPIC = "stock_source";
+    final String STOCK_OUTPUT_TOPIC = "stock_out";
 
     final KafkaStreams streams = buildAvroFeed(bootstrapServers, schemaRegistryUrl,
             "/tmp/kafka-streams", STOCK_INPUT_TOPIC, STOCK_OUTPUT_TOPIC);
@@ -115,7 +115,7 @@ public class StockAvroExample2 {
     // aggregate the new feed counts of by user
     final KTable<String, Long> aggregated = feeds
         // filter out old feeds
-        .filter((dummy, value) -> value.getSymbol().contains("FORR"))
+        .filter((dummy, value) -> value.getSymbol().contains("EPAM"))
         //.peek((key, value) -> System.out.println(key + value.getCompanyName()))
         // map the user id as key
         .map((key, value) -> new KeyValue<>(value.getSymbol(), value))
