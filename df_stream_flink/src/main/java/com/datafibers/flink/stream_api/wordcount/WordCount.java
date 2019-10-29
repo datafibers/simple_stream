@@ -55,6 +55,7 @@ public class WordCount {
 
 		// set up the execution environment
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+				//.setMaxParallelism(1);
 
 		// make parameters available in the web interface
 		env.getConfig().setGlobalJobParameters(params);
@@ -82,7 +83,7 @@ public class WordCount {
 			counts.writeAsText(params.get("output"));
 		} else {
 			System.out.println("Printing result to stdout. Use --output to specify output path.");
-			counts.print();
+			counts.print().setParallelism(1);
 		}
 
 		// execute program
