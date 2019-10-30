@@ -59,7 +59,8 @@ public class SocketWindowWordCount {
 		}
 
 		// get the execution environment
-		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment()
+				.setMaxParallelism(1);
 
 		// get input data by connecting to the socket
 		DataStream<String> text = env.socketTextStream(hostname, port, "\n");
@@ -87,7 +88,7 @@ public class SocketWindowWordCount {
 				});
 
 		// print the results with a single thread, rather than in parallel
-		windowCounts.print().setParallelism(1);
+		windowCounts.print();
 
 		env.execute("Socket Window WordCount");
 	}
