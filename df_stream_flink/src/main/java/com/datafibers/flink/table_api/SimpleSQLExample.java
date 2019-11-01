@@ -9,9 +9,6 @@ import java.util.Arrays;
 
 /**
  * Desc: Convert DataStreams to Tables
- * Created by zhisheng on 2019-06-02
- * blog：http://www.54tianzhisheng.cn/
- * 微信公众号：zhisheng
  */
 public class SimpleSQLExample {
     public static void main(String[] args) throws Exception {
